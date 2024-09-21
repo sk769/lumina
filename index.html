@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARG Style Interactive Screen</title>
+  <style>
+    body {
+     background-image: url('background.gif');
+      background-size: cover; 
+      background-position: center;
+      background-repeat: no-repeat;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .screen {
+      width: 400px;
+      height: 300px;
+      background-color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 5px solid #4a4a4a;
+      border-radius: 10px;
+    }
+
+    #output {
+      color: lime;
+      font-size: 18px;
+      text-align: center;
+    }
+
+    .input-container {
+      display: flex;
+      gap: 10px;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 2px solid #4a4a4a;
+      background-color: #333;
+      color: white;
+    }
+
+    button {
+      padding: 10px;
+      font-size: 16px;
+      background-color: #444;
+      color: white;
+      border: 2px solid #4a4a4a;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #555;
+    }
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="screen" id="screen">
+      <div id="output">Type a word and press Enter</div>
+      <img id="luminaImage" src="lumina.jpg" alt="lumina Image">
+    </div>
+    <div class="input-container">
+      <input type="text" id="inputWord" placeholder="Type a word...">
+      <button onclick="checkWord()">Enter</button>
+    </div>
+  </div>
+
+  <script>
+    function checkWord() {
+      const inputWord = document.getElementById('inputWord').value.toLowerCase();
+      const output = document.getElementById('output');
+      const luminaImage = document.getElementById('luminaImage');
+
+      if (inputWord === 'lumina') {
+        output.style.display = 'none';
+        luminaImage.style.display = 'block';
+      } else {
+        output.innerText = 'Unknown keyword. Try again.';
+        output.style.display = 'block';
+        luminaImage.style.display = 'none';
+      }
+    }
+  </script>
+</body>
+</html>
