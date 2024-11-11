@@ -6,8 +6,8 @@
   <title>ARG Style Interactive Screen</title>
   <style>
     body {
-     background-image: url('background.gif');
-      background-size: cover; 
+      background-image: url('background.gif');
+      background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
       color: white;
@@ -35,6 +35,7 @@
       align-items: center;
       border: 5px solid #4a4a4a;
       border-radius: 10px;
+      position: relative;
     }
 
     #output {
@@ -71,7 +72,7 @@
       background-color: #555;
     }
 
-    img {
+    .image-output {
       max-width: 100%;
       max-height: 100%;
       display: none;
@@ -82,7 +83,27 @@
   <div class="container">
     <div class="screen" id="screen">
       <div id="output">Type a word and press Enter</div>
-      <img id="luminaImage" src="lumina.jpg" alt="lumina Image">
+      <!-- Add image placeholders for each word -->
+      <img id="awakening" src="awakening.jpg" alt="Awakening Image" class="image-output">
+      <img id="spark" src="spark.jpg" alt="Spark Image" class="image-output">
+      <img id="the_call" src="the_call.jpg" alt="The Call Image" class="image-output">
+      <img id="ember_path" src="ember_path.jpg" alt="Ember Path Image" class="image-output">
+      <img id="first_trial" src="first_trial.jpg" alt="First Trial Image" class="image-output">
+      <img id="the_mentor" src="the_mentor.jpg" alt="The Mentor Image" class="image-output">
+      <img id="echoes" src="echoes.jpg" alt="Echoes Image" class="image-output">
+      <img id="the_grove" src="the_grove.jpg" alt="The Grove Image" class="image-output">
+      <img id="runes" src="runes.jpg" alt="Runes Image" class="image-output">
+      <img id="the_choice" src="the_choice.jpg" alt="The Choice Image" class="image-output">
+      <img id="the_arena" src="the_arena.jpg" alt="The Arena Image" class="image-output">
+      <img id="the_champion" src="the_champion.jpg" alt="The Champion Image" class="image-output">
+      <img id="the_key" src="the_key.jpg" alt="The Key Image" class="image-output">
+      <img id="beyond_the_gate" src="beyond_the_gate.jpg" alt="Beyond the Gate Image" class="image-output">
+      <img id="the_hidden_realm" src="the_hidden_realm.jpg" alt="The Hidden Realm Image" class="image-output">
+      <img id="legacy" src="legacy.jpg" alt="Legacy Image" class="image-output">
+      <img id="the_vision" src="the_vision.jpg" alt="The Vision Image" class="image-output">
+      <img id="unite" src="unite.jpg" alt="Unite Image" class="image-output">
+      <img id="ascend" src="ascend.jpg" alt="Ascend Image" class="image-output">
+      <img id="light" src="light.jpg" alt="Light Image" class="image-output">
     </div>
     <div class="input-container">
       <input type="text" id="inputWord" placeholder="Type a word...">
@@ -94,15 +115,95 @@
     function checkWord() {
       const inputWord = document.getElementById('inputWord').value.toLowerCase();
       const output = document.getElementById('output');
-      const luminaImage = document.getElementById('luminaImage');
+      const images = document.querySelectorAll('.image-output');
 
-      if (inputWord === 'lumina') {
-        output.style.display = 'none';
-        luminaImage.style.display = 'block';
-      } else {
-        output.innerText = 'Unknown keyword. Try again.';
-        output.style.display = 'block';
-        luminaImage.style.display = 'none';
+      // Hide all images initially
+      images.forEach(image => image.style.display = 'none');
+
+      switch (inputWord) {
+        case 'awakening':
+          document.getElementById('awakening').style.display = 'block';
+          output.style.display = 'none';
+          break;
+        case 'spark':
+          document.getElementById('spark').style.display = 'block';
+          output.style.display = 'none';
+          break;
+        case 'the call':
+          document.getElementById('the_call').style.display = 'block';
+          output.style.display = 'none';
+          break;
+        case 'ember path':
+          document.getElementById('ember_path').style.display = 'block';
+          output.style.display = 'none';
+          break;
+        case 'first trial':
+          document.getElementById('first_trial').style.display = 'block';
+          output.style.display = 'none';
+          break;
+        case 'the mentor':
+          document.getElementById('the_mentor').style.display = 'block';
+          output.style.display = 'none';
+          break;
+        case 'echoes':
+          document.getElementById('echoes').style.display = 'block';
+          output.style.display = 'none';
+          break;
+        case 'the grove':
+          document.getElementById('the_grove').style.display = 'block';
+          output.style.display = 'none';
+          break;
+        case 'runes':
+          document.getElementById('runes').style.display = 'block';
+          output.style.display = 'none';
+          break;
+        case 'the choice':
+          document.getElementById('the_choice').style.display = 'block';
+          output.style.display = 'none';
+          break;
+        case 'the arena':
+          document.getElementById('the_arena').style.display = 'block';
+          output.style.display = 'none';
+          break;
+        case 'the champion':
+          document.getElementById('the_champion').style.display = 'block';
+          output.style.display = 'none';
+          break;
+        case 'the key':
+          document.getElementById('the_key').style.display = 'block';
+          output.style.display = 'none';
+          break;
+        case 'beyond the gate':
+          document.getElementById('beyond_the_gate').style.display = 'block';
+          output.style.display = 'none';
+          break;
+        case 'the hidden realm':
+          document.getElementById('the_hidden_realm').style.display = 'block';
+          output.style.display = 'none';
+          break;
+        case 'legacy':
+          document.getElementById('legacy').style.display = 'block';
+          output.style.display = 'none';
+          break;
+        case 'the vision':
+          document.getElementById('the_vision').style.display = 'block';
+          output.style.display = 'none';
+          break;
+        case 'unite':
+          document.getElementById('unite').style.display = 'block';
+          output.style.display = 'none';
+          break;
+        case 'ascend':
+          document.getElementById('ascend').style.display = 'block';
+          output.style.display = 'none';
+          break;
+        case 'light':
+          document.getElementById('light').style.display = 'block';
+          output.style.display = 'none';
+          break;
+        default:
+          output.innerText = 'Unknown keyword. Try again.';
+          output.style.display = 'block';
       }
     }
   </script>
